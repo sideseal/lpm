@@ -195,7 +195,9 @@ def main():
         list_index()
 
 if __name__ == "__main__":
-    os.chmod("./lpm.py", 0o700)
+    filepath = os.path.dirname(os.path.abspath(__file__))
+    lpm_path = os.path.join(filepath, "lpm.py")
+    os.chmod(lpm_path, 0o700)
     if check_password_file_exist():
         if len(args) > 0 or len(sys.argv) < 2:
             parser.print_help()
